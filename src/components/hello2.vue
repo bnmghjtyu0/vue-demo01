@@ -44,6 +44,7 @@ export default {
           username:vm.username,
           message :vm.message
         })
+        vm.message = ''
     }
   }
 }
