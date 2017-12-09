@@ -1,9 +1,9 @@
 <template>
   <div class="hello container mt-5">
     <div class="input-group mb-5">
-  <input type="text" class="form-control" placeholder="請輸入訊息">
+  <input type="text" class="form-control" v-model="message" placeholder="請輸入訊息">
   <span class="input-group-addon">
-  <button class="btn btn-primary">Go</button>
+  <button class="btn btn-primary" @click="submitMessage()">Go</button>
   </span>
 </div>
     <div class="media" v-for="item in messages">
@@ -24,6 +24,7 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       username:'Winni',
+      message: '',
       messages: [
         {
           username:'Ricahrd',
@@ -34,6 +35,11 @@ export default {
           message :'安安'
         }
       ]
+    }
+  },
+  methods:{
+    submitMessage(){
+      console.log(this.message)
     }
   }
 }
