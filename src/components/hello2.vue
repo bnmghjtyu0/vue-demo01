@@ -7,11 +7,12 @@
   </span>
 </div>
     <div class="media" v-for="item in messages">
-      <img class="align-self-start mr-3" src="http://lorempixel.com/100/100/food/1/" alt="Generic placeholder image">
+      <img v-if="item.username == username" class="align-self-start mr-3" src="https://www.dramafever.com/st/news/images/72eb3876-4148-4370-8911-570f5dd18178.jpg" width="100px" height="100px" alt="Generic placeholder image">
       <div class="media-body">
         <h5 class="mt-0">{{item.username}}</h5>
         <p>{{item.message}}</p>
       </div>
+      <img v-if="item.username != username" class="align-self-start mr-3" src="http://www.chinapress.com.my/wp-content/uploads/2017/06/20170626fb35.jpg" width="100px" height="100px" alt="Generic placeholder image">
     </div>
     </div>
 </template>
@@ -22,6 +23,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      username:'Winni',
       messages: [
         {
           username:'Ricahrd',
